@@ -6,6 +6,9 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --cds-font-display: "Coinbase Display", var(--cds-font-fallback);
+  --cds-font-sans: "Coinbase Sans", var(--cds-font-fallback);
+  --cds-font-text: "Coinbase Text", var(--cds-font-fallback);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,8 +18,47 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+@font-face {
+  font-family: "Coinbase Display";
+  src: url("/fonts/Coinbase-Display/Coinbase_Display-Regular-web-1.32.woff2")
+      format("woff2"),
+    url("/fonts/Coinbase-Display/Coinbase_Display-Regular-web-1.32.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Coinbase Sans";
+  src: url("/fonts/Coinbase-Sans/Coinbase_Sans-Regular-web-1.32.woff2")
+      format("woff2"),
+    url("/fonts/Coinbase-Sans/Coinbase_Sans-Regular-web-1.32.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Coinbase Text";
+  src: url("/fonts/Coinbase-Text/Coinbase_Text-Regular-web-1.32.woff2")
+      format("woff2"),
+    url("/fonts/Coinbase-Text/Coinbase_Text-Regular-web-1.32.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --cds-font-display: "Coinbase Display", var(--cds-font-fallback);
+  --cds-font-sans: "Coinbase Sans", var(--cds-font-fallback);
+  --cds-font-text: "Coinbase Text", var(--cds-font-fallback);
+  --cds-font-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
 
 body {
+  font-family: var(--cds-font-sans);
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
