@@ -12,7 +12,8 @@ export default function Home() {
             href="/signin"
             target="_blank"
             rel="noopener noreferrer"
-          >    
+          >
+            Click Here
           </a>
         </div>
       </div>
